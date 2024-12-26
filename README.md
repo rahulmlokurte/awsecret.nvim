@@ -36,11 +36,6 @@ You can configure the plugin by passing options to the **setup** function.
 require("awsecret").setup(
 {
   cache_path = vim.fn.stdpath("data") .. "/awsecret_cache.json", -- Path to store cached secrets
-  floating_window = {
-    width = 0.5, -- Width of the floating window (as a percentage of the editor width)
-    height = 0.3, -- Height of the floating window (as a percentage of the editor height)
-    border = "rounded", -- Border style for the floating window
-  },
 }
 )
 ```
@@ -49,7 +44,7 @@ require("awsecret").setup(
 
 ### Fetch and Cache Secrets
 
-- Press the key mapping for fetching secrets (e.g., <leader>sf).
+- `:lua =require("awsecret").fetch_and_cache("<secret_name")` # Fetch and Cache the secrets
 
 - Enter the AWS secret key when prompted.
 
@@ -57,11 +52,11 @@ require("awsecret").setup(
 
 ### Retrieve and Display Secret Values
 
-- Press the key mapping for selecting a secret (e.g., <leader>sg).
+- `:lua =require("awsecret").select_secret()` # Select the secret key
 
 - Use Telescope to select a cached secret key.
 
-- The value of the selected secret is displayed in a floating window.
+- The value of the selected secret is notified
 
 ## Requirements
 
