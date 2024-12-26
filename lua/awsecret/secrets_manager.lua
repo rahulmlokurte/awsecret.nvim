@@ -44,15 +44,26 @@ end
 
 M.fetch_and_cache = function(secret_name)
 	if not secret_name or secret_name == "" then
-		vim.notify("Please provide a secret name", vim.log.levels.ERROR)
-		return
-	end
-
-	local secret = M.get_secret(secret_name)
-	if secret then
-		local cached_secrets = M.load_secrets()
-		cached_secrets[secret_name] = secret
-		M.save_secrets(cached_secrets)
+		vim.ui.input({ prompt = "Enter the AWS Secret Name: " }, function(input)
+			if input and input ~= "" then
+				secret_name = input
+				local secret = M.get_secret(secret_name)
+				if secret then
+					local cached_secrets = M.load_secrets()
+					cached_secrets[secret_name] = secret
+					M.save_secrets(cached_secrets)
+				end
+			else
+				vim.notify("No secret name provided. Operation Cancelled", vim.log.levels.WARN)
+			end
+		end)
+	else
+		local secret = M.get_secret(secret_name)
+		if secret then
+			local cached_secrets = M.load_secrets()
+			cached_secrets[secret_name] = secret
+			M.save_secrets(cached_secrets)
+		end
 	end
 end
 
