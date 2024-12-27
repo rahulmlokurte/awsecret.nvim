@@ -40,11 +40,20 @@ require("awsecret").setup(
 )
 ```
 
+## Default Keybinds
+
+`awsecret.nvim` comes with some default keybinds!
+
+| Key         | Description                             |
+| ----------- | --------------------------------------- |
+| <leader>smf | Fetch Secrets from secret manager       |
+| <leader>sms | Select the key from the fetched secrets |
+
 ## Usage
 
 ### Fetch and Cache Secrets
 
-- `:lua =require("awsecret").fetch_and_cache("<secret_name")` # Fetch and Cache the secrets
+- `AwsecretFetch` # Fetch and Cache the secrets
 
 - Enter the AWS secret key when prompted.
 
@@ -52,7 +61,7 @@ require("awsecret").setup(
 
 ### Retrieve and Display Secret Values
 
-- `:lua =require("awsecret").select_secret()` # Select the secret key
+- `AwsecretSelect` # Select the secret key
 
 - Use Telescope to select a cached secret key.
 
@@ -60,7 +69,7 @@ require("awsecret").setup(
 
 ## Requirements
 
-- Neovim 0.8+
+- Neovim > 10.0
 
 - AWS CLI configured with appropriate credentials.
 
@@ -74,7 +83,7 @@ Ensure your AWS CLI is configured with valid credentials to access Secrets Manag
 
 2. Fetch Secrets:
 
-- Trigger the fetch key mapping (e.g., <leader>sf).
+- Trigger the fetch key mapping (e.g., <leader>smf).
 
 - Enter the secret key (e.g., my-secret-key).
 
@@ -82,7 +91,7 @@ Ensure your AWS CLI is configured with valid credentials to access Secrets Manag
 
 3. Select and View Secrets:
 
-- Trigger the select key mapping (e.g., <leader>sg).
+- Trigger the select key mapping (e.g., <leader>sms).
 
 - Use Telescope to select a key.
 
