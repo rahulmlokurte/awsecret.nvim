@@ -46,8 +46,8 @@ require("awsecret").setup(
 
 | Key         | Description                             |
 | ----------- | --------------------------------------- |
-| <leader>smf | Fetch Secrets from secret manager       |
-| <leader>sms | Select the key from the fetched secrets |
+| `<leader>smf` | Fetch Secrets from secret manager       |
+| `<leader>sms` | Select the key from the fetched secrets |
 
 ## Usage
 
