@@ -83,7 +83,7 @@ Ensure your AWS CLI is configured with valid credentials to access Secrets Manag
 
 2. Fetch Secrets:
 
-- Trigger the fetch key mapping (e.g., <leader>smf).
+- Trigger the fetch key mapping (e.g., `<leader>smf`).
 
 - Enter the secret key (e.g., my-secret-key).
 
@@ -91,7 +91,7 @@ Ensure your AWS CLI is configured with valid credentials to access Secrets Manag
 
 3. Select and View Secrets:
 
-- Trigger the select key mapping (e.g., <leader>sms).
+- Trigger the select key mapping (e.g., `<leader>sms`).
 
 - Use Telescope to select a key.
 
